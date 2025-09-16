@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <style>
+      body { font: 13px system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 10px; width: 260px; }
+      label { display: block; margin: 8px 0 4px; }
+      input[type=number] { width: 80px; }
+      .row { display: flex; gap: 8px; align-items: center; }
+      .muted { color: #666; }
+      .btn { padding: 6px 10px; border: 1px solid #ccc; background: #f4f4f4; cursor: pointer; border-radius: 6px; }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <input type="checkbox" id="enabled">
+      <label for="enabled">Enable 4:3 in fullscreen</label>
+    </div>
+
+    <label>Global overscan (%)</label>
+    <input type="number" id="overscan" min="0" max="100" step="1">
+
+    <div style="margin-top:10px; font-weight:600;">Per-video override</div>
+    <div class="muted" id="vid"></div>
+
+    <label>Overscan (%)</label>
+    <input type="number" id="pvOverscan" min="0" max="100" step="1">
+
+    <label>Pan X (px)</label>
+    <input type="number" id="pvPanX" step="1">
+
+    <label>Pan Y (px)</label>
+    <input type="number" id="pvPanY" step="1">
+
+    <div class="row" style="margin-top:10px;">
+      <button class="btn" id="save">Save</button>
+      <button class="btn" id="clear">Clear per-video</button>
+      <a class="muted" href="#" id="openOptions" style="margin-left:auto;">Options…</a>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
